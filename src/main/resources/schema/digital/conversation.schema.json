@@ -1,0 +1,96 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "description": "Schema for Conversation",
+    "definitions": {
+        "conversation": {
+            "type": "object",
+            "$id": "#/definitions/conversation",
+            "properties": {
+                "id": {
+                    "type": "integer"
+                },
+                "conversationId": {
+                    "type": "string"
+                },
+                "messageId": {
+                    "type": "string"
+                },
+                "sender": {
+                    "type": "string"
+                },
+                "senderIdentifier": {
+                    "type": "string"
+                },
+                "receiver": {
+                    "type": "string"
+                },
+                "receiverIdentifier": {
+                    "type": "string"
+                },
+                "processIdentifier": {
+                    "type": "string"
+                },
+                "documentIdentifier": {
+                    "type": "string"
+                },
+                "messageReference": {
+                    "type": "string"
+                },
+                "messageTitle": {
+                    "type": "string"
+                },
+                "lastUpdate": {
+                    "type": "string"
+                },
+                "finished": {
+                    "type": "boolean"
+                },
+                "expiry": {
+                    "type": "string"
+                },
+                "direction": {
+                    "type": "string"
+                },
+                "serviceIdentifier": {
+                    "type": "string"
+                },
+                "messageStatuses": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "./status.schema.json#/definitions/messageStatus"
+                    }
+                }
+            },
+            "required": [
+                "id",
+                "conversationId",
+                "messageId",
+                "sender",
+                "senderIdentifier",
+                "receiver",
+                "receiverIdentifier",
+                "processIdentifier",
+                "documentIdentifier",
+                "messageReference",
+                "messageTitle",
+                "lastUpdate",
+                "finished",
+                "expiry",
+                "direction",
+                "serviceIdentifier",
+                "messageStatuses"
+            ],
+            "additionalProperties": false
+        }
+    },
+    "type": "object",
+    "properties": {
+        "conversation": {
+            "$ref": "#/definitions/conversation"
+        }
+    },
+    "required": [
+        "conversation"
+    ],
+    "additionalProperties": false
+}

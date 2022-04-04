@@ -1,0 +1,10 @@
+.DS_Store
+target/
+test.p12
+
+### IntelliJ IDEA ###
+.idea
+*.iws
+*.iml
+*.ipr
+out/

@@ -1,0 +1,38 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "description": "Schema for Status",
+    "definitions": {
+        "messageStatus": {
+            "type": "object",
+            "properties": {
+                "id": {
+                    "type": "integer"
+                },
+                "lastUpdate": {
+                    "type": "string"
+                },
+                "status": {
+                    "$ref": "#/definitions/status"
+                }
+            },
+            "required": [
+                "id",
+                "lastUpdate",
+                "status"
+            ],
+            "additionalProperties": false
+        },
+        "status": {
+            "type": "string",
+            "enum": [
+                "OPPRETTET",
+                "SENDT",
+                "MOTTATT",
+                "LEVERT",
+                "LEST",
+                "LEVETID_UTLOPT",
+                "FEIL"
+            ]
+        }
+    }
+}

@@ -1,0 +1,97 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "description": "Schema for Standard business document (SBD)",
+    "definitions": {
+        "standardBusinessDocument": {
+            "type": "object",
+            "properties": {
+                "standardBusinessDocumentHeader": {
+                    "$ref": "./sbdh.schema.json#/definitions/standardBusinessDocumentHeader"
+                },
+                "digital": {
+                    "$ref": "#/definitions/digital"
+                }
+            },
+            "required": [
+                "standardBusinessDocumentHeader",
+                "digital"
+            ],
+            "additionalProperties": false
+        },
+        "digital": {
+            "type": "object",
+            "properties": {
+                "hoveddokument": {
+                    "type": "string"
+                },
+                "sikkerhetsnivaa": {
+                    "type": "integer"
+                },
+                "avsenderId": {
+                    "type": "string"
+                },
+                "tittel": {
+                    "type": "string"
+                },
+                "spraak": {
+                    "type": "string"
+                },
+                "digitalPostInfo": {
+                    "$ref": "#/definitions/digitalPostInfo"
+                },
+                "varsler": {
+                    "$ref": "#/definitions/varsler"
+                },
+                "metadataFiler": {
+                    "type": "object"
+                }
+            },
+            "required": [
+                "hoveddokument",
+                "sikkerhetsnivaa",
+                "tittel",
+                "spraak",
+                "digitalPostInfo"
+            ],
+            "additionalProperties": false
+        },
+        "digitalPostInfo": {
+            "type": "object",
+            "properties": {
+                "virkningsdato": {
+                    "type": "string"
+                },
+                "aapningskvittering": {
+                    "type": "boolean"
+                }
+            },
+            "required": [
+                "virkningsdato",
+                "aapningskvittering"
+            ],
+            "additionalProperties": false
+        },
+        "varsler": {
+            "type": "object",
+            "properties": {
+                "epostTekst": {
+                    "type": "string"
+                },
+                "smsTekst": {
+                    "type": "string"
+                }
+            },
+            "additionalProperties": false
+        }
+    },
+    "type": "object",
+    "properties": {
+        "standardBusinessDocument": {
+            "$ref": "#/definitions/standardBusinessDocument"
+        }
+    },
+    "required": [
+        "standardBusinessDocument"
+    ],
+    "additionalProperties": false
+}
